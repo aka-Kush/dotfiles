@@ -61,13 +61,13 @@ keys = [
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 
     # Volume
-    Key([], "XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +10%")),
-    Key([], "XF86AudioLowerVolume",lazy.spawn("pactl -- set-sink-volume 0 -10%")),
+    Key([], "XF86AudioRaiseVolume",lazy.spawn("pactl -- set-sink-volume 0 +5%")),
+    Key([], "XF86AudioLowerVolume",lazy.spawn("pactl -- set-sink-volume 0 -5%")),
     Key([], "XF86AudioMute",lazy.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")),
 
     # Brightness
-    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%")),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-")),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +5%")),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 5%-")),
 
     # screenshot
     Key([], "Print", lazy.spawn("gnome-screenshot -i")),

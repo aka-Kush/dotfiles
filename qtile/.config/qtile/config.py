@@ -6,7 +6,6 @@ from libqtile import hook
 # user files imports
 from keybindings import *
 from bar import *
-from groups import *
 from layouts import *
 
 # autostart script
