@@ -5,7 +5,7 @@ from libqtile import hook
 
 # user files imports
 from keybindings import *
-from screen import *
+from bar import *
 from groups import *
 from layouts import *
 
