@@ -1,19 +1,34 @@
+from keybindings import keys, mod
 from libqtile import bar, qtile
 from libqtile.config import Group, Key, Screen
 from libqtile.lazy import lazy
-from keybindings import keys, mod
+from libqtile.widget.battery import Battery, BatteryState
 from qtile_extras import widget
 from qtile_extras.widget.decorations import BorderDecoration
-from libqtile.widget.battery import Battery, BatteryState
 
-
-groups= []
+groups = []
 # group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
-group_names = ["1", "2", "3", "4", "5", "6", "7",]
+group_names = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+]
 # group_labels = ["1", "2", "3", "4", "5", "6", "7", "8", "9",]
 # group_labels = ["DEV", "WWW", "MUS", "DIS", "FIL", "CHAT", "VID",]
 # group_labels = [" ", " ", " ", " ", " ", " ", " ", " ", "",]
-group_labels = [" ", " ", " ", " ", " ", " ", "",]
+group_labels = [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+    "",
+]
 
 # groups = [Group(i) for i in [
 #     "   ", "   ", "   ", "   ", "   ", "   ", "   ",
@@ -27,7 +42,8 @@ for i in range(len(group_names)):
             name=group_names[i],
             # layout=group_layouts[i].lower(),
             label=group_labels[i],
-        ))
+        )
+    )
 
 for i in groups:
     keys.extend(
@@ -261,12 +277,9 @@ screens = [
                     highlight_color="#eb6f92",
                     highlight_method="line",
                     borderwidth=0,
-                    inactive="#808080"
+                    inactive="#808080",
                 ),
-                widget.Sep(
-                    foreground = "#bac2de",
-                    linewidth = 2
-                ),
+                widget.Sep(foreground="#bac2de", linewidth=2),
                 # CurrentLayoutIcon(
                 #     font = "UbuntuMono Nerd Font",
                 #     fontsize = 1,
@@ -274,91 +287,78 @@ screens = [
                 #     use_mask = True
                 # ),
                 widget.CurrentLayout(
-                    font= "JetBrainsMono Nerd Font Mono Bold",
+                    font="JetBrainsMono Nerd Font Mono Bold",
                     foreground="#a6e3a1",
                 ),
-                widget.Sep(
-                    foreground = "#bac2de",
-                    linewidth = 2
-                ),
+                widget.Sep(foreground="#bac2de", linewidth=2),
                 widget.WindowName(
                     foreground="#eb6f92",
                     markup=True,
                     font="CodeNewRoman Nerd Font Bold",
                     fontsize=15,
-                    max_chars=63
+                    max_chars=63,
                 ),
                 widget.Backlight(
                     # background = '#b4befe',
                     # foreground = '#000000',
-                    backlight_name = 'amdgpu_bl1',
-                    brightness_file = 'brightness',
-                    fontsize = 15,
-                    mouse_callbacks = {
-                        "Button1": lambda: qtile.cmd_spawn("brightnessctl set +5%"), 
-                        "Button3": lambda: qtile.cmd_spawn("brightnessctl set 5%-")
+                    backlight_name="amdgpu_bl1",
+                    brightness_file="brightness",
+                    fontsize=15,
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn("brightnessctl set +5%"),
+                        "Button3": lambda: qtile.cmd_spawn("brightnessctl set 5%-"),
                     },
-                    format = '  {percent:2.0%}',
-                    decorations = [
+                    format="  {percent:2.0%}",
+                    decorations=[
                         BorderDecoration(
-                            colour = "#f5c2e7",
-                            border_width = [0,0,3,0],
-                            padding = 0,
+                            colour="#f5c2e7",
+                            border_width=[0, 0, 3, 0],
+                            padding=0,
                         ),
                     ],
                 ),
-
-                widget.Spacer(
-                    length=10,
-                    background="#1e1e2e"
-                ),
-                
+                widget.Spacer(length=10, background="#1e1e2e"),
                 widget.Volume(
                     # emoji = True,
-                    emoji_list = ['🔇', '', '', ''],
-                    volume_app = "pavucontrol",
-                    volume_down_command = "pactl -- set-sink-volume 0 -5%",
-                    volume_up_command = "pactl -- set-sink-volume 0 +5%",
-                    mute_format = "OFF",
-                    mute_command = "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-                    get_volume_command = "pamixer --get-volume-human",
-                    fmt = '    {}',
-                    decorations = [
+                    emoji_list=["🔇", "", "", ""],
+                    volume_app="pavucontrol",
+                    volume_down_command="pactl -- set-sink-volume 0 -5%",
+                    volume_up_command="pactl -- set-sink-volume 0 +5%",
+                    mute_format="OFF",
+                    mute_command="pactl set-sink-mute @DEFAULT_SINK@ toggle",
+                    get_volume_command="pamixer --get-volume-human",
+                    fmt="  {}",
+                    decorations=[
                         BorderDecoration(
-                            colour = "#f9e2af",
-                            border_width = [0,0,3,0],
-                            padding = 0,
+                            colour="#f9e2af",
+                            border_width=[0, 0, 3, 0],
+                            padding=0,
                         ),
                     ],
                 ),
-
-                widget.Spacer(
-                    length=10,
-                    background="#1e1e2e"
-                ),
-
+                widget.Spacer(length=10, background="#1e1e2e"),
                 widget.Battery(
-                    charge_char = "",
-                    discharge_char = "v",
-                    not_charging_char = '*',
-                    empty_char = "",
-                    full_char = "",
-                    format = '{char}   {percent:2.0%}',
-                    update_interval = "1",
-                    fontsize = 14,
-                    low_background = "#ff0000",
-                    low_foreground = "#f5f5f5",
-                    low_percentage = 0.15,
-                    notify_below = 15,
-                    decorations = [
+                    # charge_char="",
+                    charge_char="",
+                    discharge_char="",
+                    not_charging_char="*",
+                    empty_char="",
+                    full_char="",
+                    format="{char}  {percent:2.0%}",
+                    update_interval=1,
+                    fontsize=14,
+                    low_background="#ff0000",
+                    low_foreground="#f5f5f5",
+                    low_percentage=0.15,
+                    notify_below=15,
+                    decorations=[
                         BorderDecoration(
-                            colour = "#cba6f7",
-                            border_width = [0,0,3,0],
-                            padding = 0,
+                            colour="#cba6f7",
+                            border_width=[0, 0, 3, 0],
+                            padding=0,
                         ),
                     ],
                 ),
-
                 widget.Spacer(
                     length=10,
                     background="#1e1e2e",
@@ -366,40 +366,39 @@ screens = [
                 widget.Clock(
                     format="   %I:%M %p - %b %e",
                     update_interval=60.0,
-                    decorations = [
+                    decorations=[
                         BorderDecoration(
-                            colour = "#74c7ec",
-                            border_width = [0,0,3,0],
-                            padding = 0,
+                            colour="#74c7ec",
+                            border_width=[0, 0, 3, 0],
+                            padding=0,
                         ),
                     ],
                 ),
-
                 widget.Spacer(
                     length=10,
                     background="#1e1e2e",
                 ),
-
                 widget.Systray(
-                    decorations = [
+                    decorations=[
                         BorderDecoration(
-                            colour = "#fab387",
-                            border_width = [0,0,3,0],
-                            padding_x = 0,
+                            colour="#fab387",
+                            border_width=[0, 0, 3, 0],
+                            padding_x=0,
                         ),
                     ],
                 ),
-
                 widget.Spacer(
                     length=10,
                     background="#1e1e2e",
                 ),
-
-
                 widget.TextBox(
                     text="",
                     foreground="#f38ba8",
-                    mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("python /usr/share/archlinux-logout/archlinux-logout.py")}
+                    mouse_callbacks={
+                        "Button1": lambda: qtile.cmd_spawn(
+                            "python /usr/share/archlinux-logout/archlinux-logout.py"
+                        )
+                    },
                 ),
                 widget.Spacer(
                     length=4,
