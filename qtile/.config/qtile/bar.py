@@ -67,11 +67,13 @@ for i in groups:
 
 # scratchpads
 groups.append(ScratchPad('scratchpad', [
-    DropDown('term', 'kitty', height=0.8, width=0.6, x=0.2, y=0.1)
+    DropDown('term', 'kitty', height=0.8, width=0.6, x=0.2, y=0.1),
+    DropDown('file', 'thunar', height=0.8, width=0.6, x=0.2, y=0.1)
 ]));
 
 keys.extend([
     Key(["control"], "1", lazy.group['scratchpad'].dropdown_toggle('term')),
+    Key(["control"], "2", lazy.group['scratchpad'].dropdown_toggle('file')),
 ]);
 
 
