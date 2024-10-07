@@ -1,6 +1,6 @@
 from keybindings import keys, mod
 from libqtile import bar, qtile
-from libqtile.config import Group, Key, Screen
+from libqtile.config import Group, Key, Screen, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from libqtile.widget.battery import Battery, BatteryState
 from qtile_extras import widget
@@ -65,6 +65,15 @@ for i in groups:
         ]
     )
 
+# scratchpads
+groups.append(ScratchPad('scratchpad', [
+    DropDown('term', 'kitty', height=0.8, width=0.6, x=0.2, y=0.1)
+]));
+
+keys.extend([
+    Key(["control"], "1", lazy.group['scratchpad'].dropdown_toggle('term')),
+]);
+
 
 # bar
 
@@ -76,56 +85,6 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-
-class MyBattery(Battery):
-    def build_string(self, status):
-        if self.layout is not None:
-            self.layout.colour = self.foreground
-            if (
-                status.state == BatteryState.DISCHARGING
-                and status.percent < self.low_percentage
-            ):
-                self.background = self.low_background
-            else:
-                self.background = self.normal_background
-        if status.state == BatteryState.DISCHARGING:
-            if status.percent > 0.75:
-                char = ""
-            elif status.percent > 0.45:
-                char = ""
-            elif status.percent > 0.25:
-                char = ""
-            else:
-                char = ""
-        elif status.percent >= 1 or status.state == BatteryState.FULL:
-            char = ""
-        elif status.state == BatteryState.EMPTY or (
-            status.state == BatteryState.UNKNOWN and status.percent == 0
-        ):
-            char = ""
-        else:
-            char = ""
-        return self.format.format(char=char, percent=status.percent)
-
-    def restore(self):
-        self.format = "{char}  {percent:2.0%}"
-        self.font = "Font Awesome 5 Free"
-        self.timer_setup()
-
-    def button_press(self, x, y, button):
-        # self.format = "{percent:2.0%}"
-        self.timer_setup()
-        self.timeout_add(1, self.restore)
-
-
-battery = MyBattery(
-    format="{char}  {percent:2.0%}",
-    low_background="#ff0000",
-    show_short_text=False,
-    low_percentage=0.12,
-    notify_below=12,
-    # fontsize=icon_font_size + 10,
-)
 
 
 # screens = [
