@@ -1,8 +1,8 @@
 from libqtile import layout
 from libqtile.config import Click, Drag, Match
 from libqtile.lazy import lazy
-from keybindings import mod
 
+from keybindings import mod
 
 # layouts = [
 #     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
@@ -20,18 +20,22 @@ from keybindings import mod
 #     # layout.Zoomy(),
 # ]
 
-layout_theme = {"border_width": 4,
-                "margin": 5,
-                "border_focus": "#eb6f92",
-                "border_normal": "#808080",
-                "border_on_single": "#eb6f92"
-                }
+layout_theme = {
+    "border_width": 4,
+    "margin": 5,
+    "border_focus": "#eb6f92",
+    "border_normal": "#808080",
+    "border_on_single": "#eb6f92",
+}
 
 
 layouts = [
     layout.Bsp(**layout_theme),
     layout.MonadTall(**layout_theme),
     layout.MonadWide(**layout_theme),
+    layout.Tile(
+        border_focus="#eb6f92", border_normal="#808080", border_on_single="#eb6f92"
+    ),
     layout.Max(),
     # layout.RatioTile(border_focus="#9ccfd8",
     #                  border_normal="#31748f", border_width=1, margin=8),
@@ -39,13 +43,17 @@ layouts = [
 ]
 
 
-
-
-
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+    Drag(
+        [mod],
+        "Button1",
+        lazy.window.set_position_floating(),
+        start=lazy.window.get_position(),
+    ),
+    Drag(
+        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+    ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
@@ -69,7 +77,7 @@ floating_layout = layout.Floating(
         Match(wm_class="protonvpn-app"),
         Match(title="branchdialog"),  # gitk
         Match(title="pinentry"),  # GPG key password entry
-    ]
+    ],
 )
 
 auto_fullscreen = True
