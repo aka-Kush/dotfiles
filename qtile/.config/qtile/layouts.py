@@ -1,8 +1,8 @@
+from keybindings import mod
 from libqtile import layout
+# from libqtile.backend.wayland import InputConfig
 from libqtile.config import Click, Drag, Match
 from libqtile.lazy import lazy
-
-from keybindings import mod
 
 # layouts = [
 #     layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
@@ -93,7 +93,11 @@ wl_input_rules = None
 
 # xcursor theme (string or None) and size (integer) for Wayland backend
 wl_xcursor_theme = None
-wl_xcursor_size = 24
+# wl_xcursor_size = 24
+
+# wl_input_rules = {
+#     "type:touchpad": InputConfig(tap=True, natural_scroll=True, dwt=True),
+# }
 
 
 # XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
