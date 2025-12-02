@@ -1,0 +1,82 @@
+[global]
+    # Appearance
+    font = "JetBrainsMono Nerd Font 10"
+    format = "<b>%s</b>\n%b"
+    alignment = center 
+    markup = full
+    ellipsize = middle
+    
+    # Padding and spacing
+    padding = 10
+    horizontal_padding = 10
+    separator_height = 2
+    line_height = 0
+    gap_size = 6
+    corner_radius = 8
+    frame_width = 2
+    
+    # Colors (Material Design via Matugen)
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    frame_color = "{{colors.primary.default.hex}}"
+    separator_color = "{{colors.outline.default.hex}}"
+    highlight = "{{colors.primary.default.hex}}"
+    
+    # Icons
+    icon_position = left
+    max_icon_size = 64
+    min_icon_size = 32
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"
+    icon_path = /usr/share/icons:/usr/share/pixmaps
+    
+    # Behavior
+    ignore_newline = false
+    word_wrap = true
+    show_age_threshold = 60
+    show_indicators = true
+    history_length = 100
+    idle_threshold = 120
+    sticky_history = true
+    fullscreen = show
+    transparency = 30
+    follow = mouse
+    browser = /usr/bin/brave
+
+[urgency_low]
+    timeout = 3
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    frame_color = "{{colors.primary.default.hex}}"
+    highlight = "{{colors.primary_container.default.hex}}"
+
+[urgency_normal]
+    timeout = 6
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    frame_color = "{{colors.primary.default.hex}}"
+    highlight = "{{colors.primary_container.default.hex}}"
+
+[urgency_critical]
+    timeout = 0
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.error.default.hex}}"
+    frame_color = "{{colors.error.default.hex}}"
+    highlight = "{{colors.error.default.hex}}"
+
+[Spotify Notification]
+    appname = Spotify
+    icon = spotify
+
+
+[spotify Notification]
+    appname = spotify
+    icon = spotify
+
+[Discord Notification]
+    appname = Discord
+    icon = discord
+
+[Brave Notification]
+    appname = Brave-browser
+    icon = brave-browser

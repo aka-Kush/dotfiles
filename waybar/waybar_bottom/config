@@ -1,0 +1,123 @@
+[{
+    "name": "bar1",
+    "layer": "top",
+    "position": "bottom",
+    "height": 10,
+    "spacing": 10,
+    "background": "rgba(1,1,1,1)",
+    "output": "eDP-1",
+
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+        "custom/separator",
+        "hyprland/window"
+    ],
+
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "background": "#E5D9B6"
+    },
+
+    "hyprland/window": {
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "  {:%I:%M }",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip": false
+    },
+
+    "backlight": {
+        "format": " {percent}% ",
+        "format-icons": [ "", "" ],
+        "background": "theme.colors.waybar.color1",
+        "tooltip": false,
+        "on-scroll-up": "bash ~/.config/waybar/brightness.sh up",
+        "on-scroll-down": "bash ~/.config/waybar/brightness.sh down",
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 11
+        },
+        "critical-level": 9,
+        "on-critical": "notify-send 'Battery Low' 'Battery Level is below 15%!' -u critical",
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{time} ",
+        "format-icons": [ "", "", "", "", "" ],
+        "tooltip": false,
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "  {volume}%  {format_source}",
+        "format-bluetooth": " {volume}%  {format_source}",
+        "format-bluetooth-muted": "🔇 {format_source}",
+        "format-muted": "🔇 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pavucontrol",
+        "tooltip": false,
+        "max-volume": 150,
+        "on-scroll-up": "bash ~/.config/waybar/volume.sh up",
+        "on-scroll-down": "bash ~/.config/waybar/volume.sh down",
+    },
+
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/power": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false,
+        "on-click": "bash ~/.config/rofi/rofi-logout.sh"
+    },
+
+    "custom/arch": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    }
+},
+{
+    "name": "bar2",
+    "layer": "top",
+    "position": "bottom",
+    "height": 10,
+    "spacing": 10,
+    "background": "rgba(1,1,1,1)",
+    "output": "HDMI-A-1",
+
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces",
+        "custom/separator",
+        "hyprland/window"
+    ],
+    
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+}]

@@ -1,0 +1,92 @@
+@import "colors.css";
+
+* {
+  border: none;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome";
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1px 2px;
+}
+
+/* Background */
+window#waybar {
+  background-color: @background_transparent; /* Using background color with transparency */
+}
+
+.modules-left,
+.modules-right,
+.modules-center {
+  padding: 0 10px;
+}
+
+/* Workspaces */
+#workspaces button {
+  color: @primary_fixed_dim;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  border-radius: 0px;
+}
+
+/* Hover */
+#workspaces button:hover {
+  color: @primary;
+}
+
+#workspaces button.empty {
+  color: @on_surface_variant;
+}
+
+/* Active workspace */
+#workspaces button.active {
+  color: @error;
+}
+
+/* Window title */
+#window {
+  color: @on_background;
+}
+
+/* Clock */
+#clock {
+  color: @outline;
+}
+
+/* Battery */
+#battery {
+  color: @error;
+  margin-right: 5px;
+}
+
+/* Audio */
+#pulseaudio {
+  color: @primary_fixed_dim;
+  margin-right: 10px;
+}
+
+/* Backlight */
+#backlight {
+  color: @tertiary;
+}
+
+/* Tray */
+#tray {
+  color: @secondary;
+}
+
+/* Power Icon */
+#custom-power {
+  color: @error;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 1.2rem;
+}
+
+/* Arch Icon */
+#custom-arch {
+  color: @secondary;
+  font-weight: bold;
+  margin: 0 5px;
+  font-size: 1.3rem;
+}

@@ -1,0 +1,54 @@
+[config.wallpaper]
+command = "true"  # dummy command that does nothing
+set = false
+
+[templates.hyprland]
+input_path = "/home/kush/.config/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/colors.conf"
+post_hook = "hyprctl reload"
+
+[templates.waybar]
+input_path = "/home/kush/.config/matugen/templates/colors.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "~/.config/waybar/launch.sh"
+
+[templates.rofi]
+input_path = "/home/kush/.config/matugen/templates/colors-rofi.rasi"
+output_path = "~/.config/rofi/colors.rasi"
+
+[templates.dunst]
+input_path = "/home/kush/.config/matugen/templates/dunstrc"
+output_path = "~/.config/dunst/dunstrc"
+post_hook = "killall dunst; dunst & disown"
+
+[templates.kitty]
+input_path = "/home/kush/.config/matugen/templates/kitty.conf"
+output_path = "~/.config/kitty/colors.conf"
+post_hook = "pkill -SIGUSR1 kitty"
+
+[templates.neovim]
+input_path = "~/.config/matugen/templates/neovim.lua"
+output_path = "~/.config/nvim/lua/matugen_colors.lua"
+post_hook = "~/.config/nvim/reload.sh"
+
+[templates.gtk3]
+input_path = "/home/kush/.config/matugen/templates/gtk.css"
+output_path = "~/.config/gtk-3.0/gtk.css"
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-dark'
+
+[templates.gtk4]
+input_path = "/home/kush/.config/matugen/templates/gtk.css"
+output_path = "~/.config/gtk-4.0/gtk.css"
+
+[templates.pywalfox]
+input_path = "/home/kush/.config/matugen/templates/pywalfox.json"
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.obsidian]
+input_path = "/home/kush/.config/matugen/templates/obsidian.css"
+output_path = '/home/kush/Documents/obsidian/.obsidian/themes/matugen.css'
+
+[templates.discord]
+input_path = "/home/kush/.config/matugen/templates/discord.css"
+output_path = '/home/kush/.config/Vencord/themes/matugen.css'

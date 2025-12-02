@@ -1,0 +1,75 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 0,
+    
+    "modules-left": ["sway/workspaces","sway/mode"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "clock"],
+    
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+ "clock": {
+        "format": "  {:%I:%M }",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+    },
+
+    "backlight": {
+        "format": " {percent}% ",
+        "tooltip": false,
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 20,
+            "critical": 11
+        },
+        "critical-level": 15,
+        "on-critical": "notify-send 'Battery Low' 'Battery Level is below 15%!' -u critical",
+        "format": "{icon}  {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{time} ",
+        "format-icons": [ "", "", "", "", "" ],
+        "tooltip": false,
+    },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "  {volume}%",
+        "format-bluetooth": " {volume}%  {format_source}",
+        "format-bluetooth-muted": "🔇 {format_source}",
+        "format-muted": "🔇 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "on-click": "pavucontrol",
+        "tooltip": false,
+        "max-volume": 150,
+    },   
+    "sway/mode": {
+        "format": "   {}",
+        "max-length": 50
+    }
+}

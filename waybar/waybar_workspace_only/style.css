@@ -1,0 +1,44 @@
+@import "./colors.css";
+
+* {
+    font-family: "jetbrains mono nerd", "font awesome 6 free", monospace;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces {
+    background-color: @background_transparent;
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin: 0;
+}
+
+#workspaces button {
+    padding: 4px 12px;
+    margin: 0 4px;
+    background-color: transparent;
+    color: @on_surface_variant;
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background-color: @surface_container_high;
+    color: @on_surface;
+}
+
+#workspaces button.active {
+    background-color: @primary;
+    color: @on_primary;
+    padding: 4px 16px;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: @on_error;
+}

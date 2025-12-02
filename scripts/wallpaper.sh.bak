@@ -1,0 +1,20 @@
+#!/bin/bash
+# wallpaper folder
+wallpaper_dir="$HOME/Pictures/walls"
+
+# launch nsxiv in thumbnail mode, allow user to select one image
+selected=$(nsxiv -ot "$wallpaper_dir"/*)
+
+# if a wallpaper was selected
+if [[ -n "$selected" ]]; then
+    # Generate color scheme with Matugen
+    cp $selected .config/hypr/current_wallpaper
+    swww img -o HDMI-A-1,eDP-1 $selected --transition-duration 1 --transition-type grow --transition-fps 144
+    matugen image "$selected" -m "dark"
+    
+    notify-send -u normal -i "$selected" "Wallpaper Set" "Colors generated!"
+else
+    # Send error notification
+    notify-send -u normal "Wallpaper Selection" "No wallpaper selected."
+    exit 1
+fi

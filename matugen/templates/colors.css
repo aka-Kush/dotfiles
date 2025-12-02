@@ -1,0 +1,9 @@
+/*
+* Css Colors
+* Generated with Matugen
+*/
+@define-color background_transparent {{colors.surface_container.default.rgba | set_alpha: 0.8 }};
+@define-color background_transparent_full {{colors.surface_container.default.rgba | set_alpha: 0.0 }};
+<* for name, value in colors *>
+    @define-color {{name}} {{value.default.hex}};
+<* endfor *>
