@@ -1,0 +1,68 @@
+/* General Styling */
+* {
+    background-image: none;
+    font-size: 20px;
+    font-family: "JetBrains Mono NFM";
+    color: #D9E0EE; /* Light text color (Rose Pine Dawn) */
+}
+
+/* Window Background */
+window {
+    background-color: rgba(18, 18, 18, 0.45); /* Rose Pine Moon background */
+}
+
+/* Button Styles */
+button {
+    border-radius: 20px;
+    margin: 10px;
+    color: #F4D6F8; /* Light purple-pink text (Rose Pine Dawn) */
+    border-color: #F4D6F8; /* Matching border color */
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+    outline-style: none;
+    border-style: solid;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* Hover / Focus effect for Button */
+button:hover, button:focus {
+    background-color: #ebbcba; /* Light coral (Rose Pine Flavour) */
+    background-size: 30%;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+/* Button Icon Size */
+button span {
+    font-size: 1.2em; /* Increase the font size */
+}
+
+/* Icon backgrounds */
+#lock {
+    background-image: url("./icons/lock.png");
+}
+
+#logout {
+    background-image: url("./icons/logout.png");
+}
+
+#suspend {
+    background-image: url("./icons/sleep.png");
+}
+
+#shutdown {
+    background-image: url("./icons/power.png");
+}
+
+#reboot {
+    background-image: url("./icons/restart.png");
+}
+
+#hibernate {
+    background-image: url("./icons/hibernate.png");
+}

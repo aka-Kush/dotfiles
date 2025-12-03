@@ -1,0 +1,81 @@
+[global]
+    # Appearance
+    font = "JetBrainsMono Nerd Font 10"
+    format = "<b>%s</b>\n%b"
+    alignment = center 
+    markup = full
+    ellipsize = middle
+    
+    # Padding and spacing
+    padding = 10
+    horizontal_padding = 10
+    separator_height = 2
+    line_height = 0
+    gap_size = 6
+    corner_radius = 8
+    frame_width = 2
+    
+    # Colors (Rose Pine palette)
+    background = "#1f1d2e"  # Rose Pine Base Dark
+    foreground = "#f1d8df"  # Rose Pine Text (Light)
+    frame_color = "#ebbcba"  # Rose Pine Frame (Light Pink)
+    separator_color = "#9ccfd8"  # Rose Pine Watermark (Blueish)
+    highlight = "#ebbcba"  # Light Pink Highlight
+    
+    # Icons
+    icon_position = left
+    max_icon_size = 64
+    min_icon_size = 32
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"
+    icon_path = /usr/share/icons:/usr/share/pixmaps
+    
+    # Behavior
+    ignore_newline = false
+    word_wrap = true
+    show_age_threshold = 60
+    show_indicators = true
+    history_length = 100
+    idle_threshold = 120
+    sticky_history = true
+    fullscreen = show
+    transparency = 30
+    follow = mouse
+    browser = /usr/bin/brave
+
+[urgency_low]
+    timeout = 3
+    background = "#1f1d2e"  # Rose Pine Base Dark
+    foreground = "#f1d8df"  # Rose Pine Text (Light)
+    frame_color = "#ebbcba"  # Rose Pine Frame (Light Pink)
+    highlight = "#f6c177"  # Rose Pine Highlight (Soft Yellow)
+
+[urgency_normal]
+    timeout = 6
+    background = "#1f1d2e"  # Rose Pine Base Dark
+    foreground = "#f1d8df"  # Rose Pine Text (Light)
+    frame_color = "#ebbcba"  # Rose Pine Frame (Light Pink)
+    highlight = "#f6c177"  # Rose Pine Highlight (Soft Yellow)
+
+[urgency_critical]
+    timeout = 0
+    background = "#f28fad"  # Red background for critical notifications (Rose Pine Urgent Red)
+    foreground = "#f1d8df"  # Rose Pine Text (Light)
+    frame_color = "#f28fad"  # Pastel Red for frame
+    highlight = "#f28fad"  # Red highlight for urgency
+
+[Spotify Notification]
+    appname = Spotify
+    icon = spotify
+
+[spotify Notification]
+    appname = spotify
+    icon = spotify
+
+[Discord Notification]
+    appname = Discord
+    icon = discord
+
+[Brave Notification]
+    appname = Brave-browser
+    icon = brave-browser

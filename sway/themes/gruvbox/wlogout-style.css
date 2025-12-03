@@ -1,0 +1,69 @@
+* {
+    background-image: none;
+    font-size: 20px;
+    font-family: "JetBrains Mono NFM";
+    color: #ebdbb2; /* Gruvbox light text */
+}
+
+/* Window Background */
+window {
+    background-color: rgba(40, 40, 40, 0.75); /* Gruvbox dark background */
+}
+
+/* Button Styles */
+button {
+    border-radius: 20px;
+    margin: 10px;
+    color: #ebdbb2; /* Gruvbox fg */
+    border-color: #ebdbb2;
+    background-color: rgba(60, 56, 54, 0.7); /* Gruvbox muted bg */
+    outline-style: none;
+    border-style: solid;
+    border-width: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    box-shadow: none;
+    text-shadow: none;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s cubic-bezier(.55,0.0,.28,1.682);
+}
+
+/* Hover / Focus effect for Button */
+button:hover,
+button:focus {
+    background-color: #504945; /* Gruvbox dark grey highlight */
+    color: #fabd2f; /* Gruvbox yellow accent */
+    background-size: 30%;
+    animation: gradient_f 20s ease-in infinite;
+}
+
+/* Button Icon Size */
+button span {
+    font-size: 1.2em;
+}
+
+/* Icon backgrounds */
+#lock {
+    background-image: url("./icons/lock.png");
+}
+
+#logout {
+    background-image: url("./icons/logout.png");
+}
+
+#suspend {
+    background-image: url("./icons/sleep.png");
+}
+
+#shutdown {
+    background-image: url("./icons/power.png");
+}
+
+#reboot {
+    background-image: url("./icons/restart.png");
+}
+
+#hibernate {
+    background-image: url("./icons/hibernate.png");
+}

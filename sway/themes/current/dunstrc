@@ -1,0 +1,81 @@
+[global]
+    # Appearance
+    font = "JetBrainsMono Nerd Font 10"
+    format = "<b>%s</b>\n%b"
+    alignment = center
+    markup = full
+    ellipsize = middle
+
+    # Padding and spacing
+    padding = 10
+    horizontal_padding = 10
+    separator_height = 2
+    line_height = 0
+    gap_size = 6
+    corner_radius = 8
+    frame_width = 2
+
+    # Colors (Gruvbox Dark)
+    background = "#282828"       # Gruvbox Dark background
+    foreground = "#ebdbb2"       # Gruvbox Light foreground
+    frame_color = "#fabd2f"      # Gruvbox yellow frame
+    separator_color = "#83a598"  # Gruvbox blue
+    highlight = "#fabd2f"        # Gruvbox yellow highlight
+
+    # Icons
+    icon_position = left
+    max_icon_size = 64
+    min_icon_size = 32
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"
+    icon_path = /usr/share/icons:/usr/share/pixmaps
+
+    # Behavior
+    ignore_newline = false
+    word_wrap = true
+    show_age_threshold = 60
+    show_indicators = true
+    history_length = 100
+    idle_threshold = 120
+    sticky_history = true
+    fullscreen = show
+    transparency = 30
+    follow = mouse
+    browser = /usr/bin/brave
+
+[urgency_low]
+    timeout = 3
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#fabd2f"
+    highlight = "#fabd2f"
+
+[urgency_normal]
+    timeout = 6
+    background = "#282828"
+    foreground = "#ebdbb2"
+    frame_color = "#fabd2f"
+    highlight = "#fabd2f"
+
+[urgency_critical]
+    timeout = 0
+    background = "#fb4934"   # Gruvbox bright red
+    foreground = "#ebdbb2"   # light foreground for readability
+    frame_color = "#fb4934"  # red frame
+    highlight = "#fb4934"    # red highlight
+
+[Spotify Notification]
+    appname = Spotify
+    icon = spotify
+
+[spotify Notification]
+    appname = spotify
+    icon = spotify
+
+[Discord Notification]
+    appname = Discord
+    icon = discord
+
+[Brave Notification]
+    appname = Brave-browser
+    icon = brave-browser

@@ -1,0 +1,59 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    min-height: 0;
+}
+
+/* Waybar background */
+window#waybar {
+    background-color: #282828; /* Gruvbox dark */
+    color: #ebdbb2;            /* Gruvbox light text */
+}
+
+/* Workspaces */
+#workspaces button {
+    padding: 0px;
+    background-color: transparent;
+    color: #ebdbb2;
+}
+
+#workspaces button.focused {
+    background-color: #fabd2f; /* Gruvbox yellow */
+    color: #282828;            /* Dark text for contrast */
+}
+
+#workspaces button:hover {
+    background-color: #d79921; /* Slightly darker yellow */
+    color: #282828;
+}
+
+/* Modules */
+#pulseaudio,
+#battery,
+#clock {
+    margin: 0 10px;
+    color: #ebdbb2;
+}
+
+#backlight {
+    margin: 0 8px 0 12px;
+}
+
+#tray {
+    margin: 0 12px;
+}
+
+#custom-notification{
+    margin-right: 12px;
+}
+
+/* Battery states */
+#battery.warning {
+    color: #fe8019; /* Gruvbox orange */
+}
+
+#battery.critical {
+    color: #fb4934; /* Gruvbox bright red */
+}
