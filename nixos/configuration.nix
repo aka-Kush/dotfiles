@@ -89,6 +89,7 @@
 
   users.users.kush = {
     isNormalUser = true;
+    description = "Shivansh Kush";
     extraGroups = [
       "wheel"
       "networkmanager"
