@@ -48,6 +48,12 @@
 
   };
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+
   networking = {
     hostName = "nixos";
     networkmanager.enable = true;
